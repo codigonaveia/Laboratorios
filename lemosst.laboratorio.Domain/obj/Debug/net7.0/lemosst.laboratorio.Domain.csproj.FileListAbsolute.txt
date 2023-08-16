@@ -1,7 +1,6 @@
 E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\bin\Debug\net7.0\lemosst.laboratorio.Domain.deps.json
 E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\bin\Debug\net7.0\lemosst.laboratorio.Domain.dll
 E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\bin\Debug\net7.0\lemosst.laboratorio.Domain.pdb
-E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\obj\Debug\net7.0\lemosst.laboratorio.Domain.csproj.AssemblyReference.cache
 E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\obj\Debug\net7.0\lemosst.laboratorio.Domain.GeneratedMSBuildEditorConfig.editorconfig
 E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\obj\Debug\net7.0\lemosst.laboratorio.Domain.AssemblyInfoInputs.cache
 E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Domain\obj\Debug\net7.0\lemosst.laboratorio.Domain.AssemblyInfo.cs

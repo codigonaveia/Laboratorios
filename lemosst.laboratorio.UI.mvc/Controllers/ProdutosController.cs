@@ -25,7 +25,8 @@ namespace lemosst.laboratorio.UI.mvc.Controllers
      {
             if(term != null)
             {
-                //var resultados = await _produtosServices.GetProdutos(term);
+                var buscarUltimoCodigo = await _unitOfWork.ProdutosServices.listarTodos();
+                var id = buscarUltimoCodigo.LastOrDefault().Id;
                 var resultados = await _unitOfWork.ProdutosServices.GetProdutos(term);
                 return Json(resultados.Select(x=>x.NomeProduto));
             }
@@ -74,6 +75,9 @@ namespace lemosst.laboratorio.UI.mvc.Controllers
             if (term != null)
             {
                 //var resultados = await _produtosServices.GetProdutos(term);
+                var buscarUltimoCodigo = await _unitOfWork.ProdutosServices.listarTodos();
+                var id = buscarUltimoCodigo.LastOrDefault().Id;
+                var id2 = id + 1;
                 var itens = await _unitOfWork.SubItensService.GetSubItensAsync(term);
                 //var rsultadosItens = resultados.Select(resultado => new
                 //{
