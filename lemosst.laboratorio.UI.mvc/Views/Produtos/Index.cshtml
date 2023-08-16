@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<div class="container">
+    <h1>Auto Complete </h1>
+    <hr />
+    <div class="alert alert-info">
+        @*<form asp-controller="Produtos" asp-action="BuscarProdutos" method="post">*@
+        <label>Procurar</label>
+        <input type="text" id="search" name="search" class="form-control" />
+       @* <button type="submit" class="btn btn-success">Procurar</button>*@
+        @*  </form>*@
+
+    </div>
+    <div id="autocomplete-results"></div>
+</div>
+@*
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>*@
+
+@section scripts{
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        //AUTOCOMPLETE COM JQUERY UI
+
+        $(function () {
+            $("#search").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("Index","Produtos")',//"/Produtos/Index",
+                        data: { term: request.term },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 2, // Minimum characters before autocomplete suggestions start
+                open: function (event, ui) {
+                    // Posiciona a lista de sugestões abaixo do campo de entrada
+                    $(".ui-autocomplete").css("top", $("#search").offset().top + $("#search").outerHeight());
+                }
+              
+            });
+        });
+        //$(document).ready(function(){
+           
+
+        //AUTO COMPLETE
+        //$(document).ready(function () {
+        //    $('#search').on('input', async function () {
+        //        var nome = $(this).val();
+        //        if (nome.length >= 3) {  Defina um critério para acionar a busca
+        //            $.ajax({
+        //                url: '@Url.Action("Index","Produtos")',
+        //                type: 'GET',
+        //                data: { nome: nome },
+        //                success: function (data) {
+        //                    exibirResultados(data);
+        //                }
+        //            });
+
+        //        }
+        //    });
+
+        //    function exibirResultados(resultados) {
+        //        var listaResultados = $('#autocomplete-results');
+        //        listaResultados.empty();
+
+        //        $.each(resultados, function (index, resultado) {
+        //            listaResultados.append('<div>' + resultado + '</div>');
+        //        });
+        //    }
+        //});
+    </script>
+
+
+}

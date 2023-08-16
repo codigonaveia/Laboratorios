@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\lemosst.laboratorio.UI.mvc.props" />
+</Project>

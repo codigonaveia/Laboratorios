@@ -1,0 +1,17 @@
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\bin\Debug\net7.0\lemosst.laboratorio.Data.deps.json
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\bin\Debug\net7.0\lemosst.laboratorio.Data.runtimeconfig.json
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\bin\Debug\net7.0\lemosst.laboratorio.Data.dll
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\bin\Debug\net7.0\lemosst.laboratorio.Data.pdb
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\bin\Debug\net7.0\lemosst.laboratorio.Domain.dll
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\bin\Debug\net7.0\lemosst.laboratorio.Domain.pdb
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.csproj.AssemblyReference.cache
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.AssemblyInfoInputs.cache
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.AssemblyInfo.cs
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.csproj.CoreCompileInputs.cache
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.csproj.CopyComplete
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.dll
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\refint\lemosst.laboratorio.Data.dll
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.pdb
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\lemosst.laboratorio.Data.genruntimeconfig.cache
+E:\Laboratorio\lemosst.laboratorio\lemosst.laboratorio.Data\obj\Debug\net7.0\ref\lemosst.laboratorio.Data.dll

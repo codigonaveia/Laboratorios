@@ -1,0 +1,136 @@
+﻿@model ProdutoViewModel
+@{
+    ViewData["Title"] = "CadastrarProduto";
+}
+
+<div class="container">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-produto-tab" data-bs-toggle="tab" data-bs-target="#tab-produto" type="button" role="tab" aria-controls="tab-produto" aria-selected="true">Cadastrar Produtos</button>
+            <button class="nav-link" id="tab-produto-itens" data-bs-toggle="tab" data-bs-target="#tab-itens" type="button" role="tab" aria-controls="tab-itens" aria-selected="false">Cadastrar Itens</button>
+
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="tab-produto" role="tabpanel" aria-labelledby="produto-tab" tabindex="0">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        Cadastrar Produtos
+                        @if (Model != null)
+                        {
+                            <span>Id: @Model.Id</span>
+                        }
+
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Produtos" asp-action="CadastrarProduto" method="post">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="ProdutoNome">Entre com o produto</label>
+                            </div>
+                            <div class="col-auto">
+
+                                <input type="text" class="form-control" asp-for="NomeProduto">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab-itens" role="tabpanel" aria-labelledby="itens-tab" tabindex="0">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        Cadastrar Itens
+
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form id="formCadastrarItens">
+                        <div class="row">
+                            <div id="autocomplete-results"></div>
+                            <div class="mb-3">
+                                @if (Model != null)
+                                {
+                                    <input type="text" id="ProdutoId" value="@Model.Id" disabled />
+                                }
+                            </div>
+                           
+                            <div class="mb-3">
+                               <input type="hidden" id="ItensId" class="form-control" asp-for="SubItensId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ProdutoNome">Entre com o produto</label>
+                                <input type="text" id="DescricaoItens" class="form-control" name="DescricaoItens" asp-for="DescricaoItens">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ProdutoNome">Valor Unitario</label>
+                                <input type="text" class="form-control" name="PrecoUnitario" asp-for="PrecoUnitario">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ProdutoNome">Quantidade</label>
+                                <input type="text" class="form-control" name="Quantidade" asp-for="Quantidade">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" type="button" id="submitButton">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts{
+    @*<script src="~/scripts/cadastraritens.js"></script>*@
+    <script>
+        //OUTRA MANEIRA
+        $(function () {
+          
+            $("#DescricaoItens").autocomplete({
+               
+                source: function (request, response) {
+                     $.ajax({
+                        url: '@Url.Action("CadastrarProduto","Produtos")',//"/Produtos/Index",
+                        data: { term: request.term },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 2, // Minimum characters before autocomplete suggestions start
+                //open: function (event, ui) {
+                //    // Posiciona a lista de sugestões abaixo do campo de entrada
+                //    $(".ui-autocomplete").css("top", $("#DescricaoItens").offset().top + $("#DescricaoItens").outerHeight());
+                //}
+                select: function (event, ui) {
+                    // Quando uma sugestão é selecionada, preencha o campo de entrada com o nome
+                    $("#DescricaoItens").val(ui.item.label);
+
+                    // Exiba o Id em algum lugar (por exemplo, em um div abaixo do campo de entrada)
+                    $("#autocomplete-results").html("Id: " + ui.item.value);
+                    $("#ItensId").val(ui.item.value);
+
+                    return false; // Evite que o valor selecionado seja inserido no campo de entrada
+                }
+                        
+            })
+             .autocomplete("instance")._renderItem = function (ul, item) {
+                    // Personalize como cada sugestão é exibida
+                    return $("<li>")
+                        .append("<div>Id: " + item.value + " - Nome: " + item.label + "</div>")
+                        .appendTo(ul);
+             };
+
+        });
+    </script>
+}
